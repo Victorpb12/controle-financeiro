@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import * as C from './styles';
+import Grid from '../Grid';
 
-const Form = ({ handleAdd }) => {
+const Form = ({ handleAdd, transitionsList, setTransitionsList }) => {
   const [desc, setDesc] = useState('');
   const [amount, setAmount] = useState('');
   const [isExpense, setExpense] = useState('');
@@ -62,6 +63,7 @@ const Form = ({ handleAdd }) => {
         </C.RadioGroup>
         <C.Button onClick={handleSave}>Adicionar</C.Button>
       </C.Container>
+      <Grid itens={transitionsList} setItens={setTransitionsList} />
     </>
   )
 }
